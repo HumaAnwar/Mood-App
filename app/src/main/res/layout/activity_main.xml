@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:padding="@dimen/_15sdp"
+    android:background="@drawable/img_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How do you feel  today?"
+        android:textSize="@dimen/_18ssp"
+        android:textColor="@color/white"
+        android:id="@+id/t1"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+          android:layout_marginTop="@dimen/_50sdp"
+        android:fontFamily="@font/ptserifregular"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t1"
+        android:text="Express your feelings,and we'll reveal  \n          the perfect Ayat for your mood"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:id="@+id/t2"
+        android:fontFamily="@font/ptserifregular"/>
+
+    <com.google.android.material.search.SearchBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t2"
+        android:layout_marginTop="18dp"
+        android:id="@+id/search"
+        android:background="@drawable/search_bg"
+        android:hint="Search by name or Category" />
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/search"
+    tools:listitem="@layout/mood_item"
+    android:id="@+id/rv"/>
+</RelativeLayout>
