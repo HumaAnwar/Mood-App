@@ -14,4 +14,12 @@
     <color name="dblue">#01113C</color>
     <color name="dpurple">#2A1433</color>
     <color name="lred">#C19191</color>
+    <color name="dark">#101424</color>
+    <color name="lighred">#E64C4C</color>
+    <color name="darkgr">#192608</color>
+    <color name="darkb">#10353C</color>
+    <color name="lightp">#9AA2DB</color>
+    <color name="darred">#5B0B25</color>
+    <color name="pup">#923011</color>
+
 </resources>

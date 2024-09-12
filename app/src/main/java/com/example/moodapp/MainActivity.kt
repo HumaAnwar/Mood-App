@@ -54,6 +54,11 @@ class MainActivity : AppCompatActivity(), MoodAdapter.OnItemClickListener {
         val lred = ContextCompat.getColor(this, R.color.lred)
         list.add(MoodModel(R.drawable.joyful, "Joyful",lred))
 
+
+        val dark = ContextCompat.getColor(this, R.color.dark)
+        list.add(MoodModel(R.drawable.calm, "Calm",dark))
+
+
         val parrotColor = ContextCompat.getColor(this, R.color.parrot)
         list.add(MoodModel(R.drawable.headache, "Headache",parrotColor))
 
@@ -67,14 +72,31 @@ class MainActivity : AppCompatActivity(), MoodAdapter.OnItemClickListener {
         val dblue = ContextCompat.getColor(this, R.color.dblue)
         list.add(MoodModel(R.drawable.anxious, "Anxious",dblue))
 
-        list.add(MoodModel(R.drawable.in_love, "Calm"))
-        list.add(MoodModel(R.drawable.in_love, "Energized"))
-        list.add(MoodModel(R.drawable.in_love, "Content"))
-        list.add(MoodModel(R.drawable.in_love, "Hopeful"))
-        list.add(MoodModel(R.drawable.in_love, "Inspired"))
-        list.add(MoodModel(R.drawable.in_love, "Cheerful"))
-        list.add(MoodModel(R.drawable.in_love, "Playful"))
-        list.add(MoodModel(R.drawable.in_love, "Motivated"))
+        val light = ContextCompat.getColor(this, R.color.lighred)
+        list.add(MoodModel(R.drawable.energized, "Energized",light))
+
+
+        val darkk = ContextCompat.getColor(this, R.color.darkgr)
+        list.add(MoodModel(R.drawable.hope, "Hopeful",darkk))
+
+
+        val blue = ContextCompat.getColor(this, R.color.darkb)
+        list.add(MoodModel(R.drawable.inspired, "Inspired"))
+
+
+        val pur = ContextCompat.getColor(this, R.color.lightp)
+        list.add(MoodModel(R.drawable.cheerful, "Cheerful",pur))
+
+
+        val dar = ContextCompat.getColor(this, R.color.darred)
+        list.add(MoodModel(R.drawable.play, "Playful",dar))
+
+
+        val pup = ContextCompat.getColor(this, R.color.pup)
+        list.add(MoodModel(R.drawable.motive, "Motivated",pup))
+
+
+
         list.add(MoodModel(R.drawable.in_love, "Grateful"))
         list.add(MoodModel(R.drawable.in_love, "Proud"))
         list.add(MoodModel(R.drawable.in_love, "Serene"))
