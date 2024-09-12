@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="black">#B162AE</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#BA1010</color>
     <color name="purple">#673AB7</color>
+    <color name="orange">#FF9800</color>
+    <color name="lightgreen">#009688</color>
+    <color name="pink">#E91E63</color>
+    <color name="yeloow">#CDDC39</color>
+    <color name="parrot">#84DC1D</color>
+    <color name="brown">#AB7C6B</color>
+    <color name="lpurple">#B294DB</color>
+    <color name="dblue">#01113C</color>
+    <color name="dpurple">#2A1433</color>
+    <color name="lred">#C19191</color>
 </resources>

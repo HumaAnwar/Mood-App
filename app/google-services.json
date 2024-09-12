@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1042306111445",
+    "project_id": "mood-app-3ed4e",
+    "storage_bucket": "mood-app-3ed4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042306111445:android:7ab7deeb75f15b5570cf5c",
+        "android_client_info": {
+          "package_name": "com.example.moodapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMzLkXBuosA3XHjq3tLJT1dbfGBZ0wn14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
