@@ -85,7 +85,7 @@ class QuotesActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     binding.translation.text = translation ?: "No translation found for this mood."
                     binding.moodemoji.setImageResource(emojiResId) // Set the emoji
 
-                    currentText = "${binding.ayat.text} ${binding.translation.text}"
+                    currentText = binding.translation.text.toString()
                 } else {
                     binding.ayat.text = "Document does not exist."
                     binding.translation.text = ""

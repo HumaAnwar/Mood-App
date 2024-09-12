@@ -31,19 +31,29 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:id="@+id/t2"
         android:fontFamily="@font/ptserifregular"/>
-
-    <com.google.android.material.search.SearchBar
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:id="@+id/cvSearch"
+    android:layout_below="@id/t2"
+app:cardBackgroundColor="@color/white"
+    app:cardElevation="10dp"
+    android:layout_marginHorizontal="20dp"
+    app:cardCornerRadius="15dp"
+    android:layout_height="50dp">
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/t2"
-        android:layout_marginTop="18dp"
+        android:layout_height="match_parent"
         android:id="@+id/search"
-        android:background="@drawable/search_bg"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+
         android:hint="Search by name or Category" />
+</androidx.cardview.widget.CardView>
+
 <androidx.recyclerview.widget.RecyclerView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_below="@id/search"
+    android:layout_below="@id/cvSearch"
     tools:listitem="@layout/mood_item"
     android:id="@+id/rv"/>
 </RelativeLayout>
