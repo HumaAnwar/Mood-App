@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/dark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ui.RateUsActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/vector"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_80sdp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_290sdp"
+        android:background="@drawable/layout_bg"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Opinion Matters To Us"
+            android:textStyle="bold"
+            android:id="@+id/opim"
+            android:textColor="@color/dark"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/ptserifregular"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:textSize="@dimen/_16sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We work super hard to serve you better and would \n love to know how would you rate our app"
+            android:textStyle="bold"
+            android:id="@+id/text"
+            android:layout_below="@id/opim"
+            android:textColor="@color/dark"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/amiriregular"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_13sdp"/>
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:numStars="5"
+            android:stepSize="1.0"
+            android:rating="0"
+            android:progressTint="@color/orange"
+            android:isIndicator="false"
+
+            android:layout_marginTop="@dimen/_15sdp" />
+
+        <com.google.android.material.button.MaterialButton
+
+            android:id="@+id/rateButton"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:text="Rate Us"
+            app:backgroundTint="@android:color/transparent"
+            app:strokeColor="@color/dark"
+            app:strokeWidth="2dp"
+            android:layout_below="@id/ratingBar"
+            app:cornerRadius="@dimen/_10sdp"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textColor="@color/dark" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/exitbtn"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="wrap_content"
+            android:text=" Exit"
+            android:layout_below="@id/rateButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:backgroundTint="@color/dark"
+            android:textColor="@color/white"/>
+
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

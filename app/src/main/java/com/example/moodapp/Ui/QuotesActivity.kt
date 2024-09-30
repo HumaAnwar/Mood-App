@@ -28,6 +28,10 @@ class QuotesActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var currentText = ""
     private var currentMoodName: String? = null
 
+    // List to hold ayats and translations
+    private var ayatList = listOf<String>()
+    private var translationList = listOf<String>()
+    private var currentIndex = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuotesBinding.inflate(layoutInflater)
@@ -38,7 +42,8 @@ class QuotesActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         // Retrieve mood name and card color from the Intent
         val moodName = intent.getStringExtra("MOOD_NAME")
-        val backgroundColor = intent.getIntExtra("CARD_COLOR", ContextCompat.getColor(this, R.color.red))
+        val backgroundColor =
+            intent.getIntExtra("CARD_COLOR", ContextCompat.getColor(this, R.color.red))
 
         if (moodName != null) {
             currentMoodName = moodName
@@ -70,6 +75,21 @@ class QuotesActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
             isPlaying = !isPlaying
         }
+        // Handle forward button click
+        binding.frwrd.setOnClickListener {
+            if (currentIndex < ayatList.size - 1) {
+                currentIndex++
+                updateUI()
+            }
+        }
+
+        // Handle back button click for previous ayat
+        binding.back.setOnClickListener {
+            if (currentIndex > 0) {
+                currentIndex--
+                updateUI()
+            }
+        }
     }
 
     private fun getQuoteFromFirestore(moodName: String) {
@@ -77,28 +97,41 @@ class QuotesActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         moodCollectionRef.document(moodName).get()
             .addOnSuccessListener { document ->
                 if (document != null && document.exists()) {
-                    val ayat = document.getString("ayat")
-                    val translation = document.getString("translation")
-                    val emojiResId = getEmojiResourceId(moodName) // Get the emoji resource ID
+                    // Retrieve ayats and translations as lists
+                    ayatList = document.get("ayats") as List<String>? ?: listOf()
+                    translationList = document.get("translations") as List<String>? ?: listOf()
 
-                    binding.ayat.text = ayat ?: "No quote found for this mood."
-                    binding.translation.text = translation ?: "No translation found for this mood."
-                    binding.moodemoji.setImageResource(emojiResId) // Set the emoji
+                    // Check if the lists are not empty
+                    if (ayatList.isNotEmpty() && translationList.isNotEmpty()) {
+                        updateUI() // Update the UI with the first ayat and translation
+                    } else {
+                        binding.ayat.text = "No ayats found for this mood."
+                        binding.translation.text = "No translations found for this mood."
+                        binding.moodemoji.setImageResource(R.drawable.cartoon) // Set a default emoji
+                    }
 
-                    currentText = binding.translation.text.toString()
                 } else {
+                    // Document does not exist
                     binding.ayat.text = "Document does not exist."
                     binding.translation.text = ""
-                    binding.moodemoji.setImageResource(R.drawable.cartoon   ) // Set a default emoji if needed
-                    currentText = ""
+                    binding.moodemoji.setImageResource(R.drawable.cartoon) // Set a default emoji
                 }
             }
             .addOnFailureListener { exception ->
-                binding.ayat.text = "Failed to retrieve quote: ${exception.message}"
+                // Handle the error if Firestore retrieval fails
+                binding.ayat.text = "Failed to retrieve ayats: ${exception.message}"
                 binding.translation.text = ""
-                binding.moodemoji.setImageResource(R.drawable.cartoon) // Set a default emoji if needed
-                currentText = ""
+                binding.moodemoji.setImageResource(R.drawable.cartoon) // Set a default emoji
             }
+    }
+
+    // Updates the UI to display the current ayat and translation
+    private fun updateUI() {
+        binding.ayat.text = ayatList[currentIndex]
+        binding.translation.text = translationList[currentIndex]
+
+        // Update the current text to be spoken (i.e., the current translation)
+        currentText = translationList[currentIndex]
     }
 
     private fun getEmojiResourceId(moodName: String): Int {
@@ -137,4 +170,3 @@ class QuotesActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         super.onDestroy()
     }
 }
-

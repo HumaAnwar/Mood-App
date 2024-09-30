@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ui.OnBoardingActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewpager"/> <!-- Corrected ID -->
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tablayout"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp"
+        android:background="@android:color/transparent"
+        app:tabRippleColor="@null"
+        app:tabBackground="@drawable/tabeselector"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:id="@+id/skip"
+        android:textSize="15sp"
+        android:textColor="@color/darkgr"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        app:cornerRadius="2dp"
+        android:paddingStart="15dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/next"
+        android:textSize="15sp"
+        android:textColor="@color/darkgr"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@android:color/transparent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:cornerRadius="2dp"
+        android:paddingStart="15dp"/>
+</RelativeLayout>

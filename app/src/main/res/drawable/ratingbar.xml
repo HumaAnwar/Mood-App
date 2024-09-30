@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background for empty stars -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <solid android:color="#CCCCCC"/> <!-- Color for empty stars -->
+        </shape>
+    </item>
+
+    <!-- Background for filled stars -->
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape android:shape="rectangle">
+                <solid android:color="#FFDF00"/> <!-- Color for filled stars -->
+            </shape>
+        </clip>
+    </item>
+
+    <!-- Star for progress (filled) -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <solid android:color="#FFD700"/> <!-- Color for the star when rated -->
+            </shape>
+        </clip>
+    </item>
+</layer-list>

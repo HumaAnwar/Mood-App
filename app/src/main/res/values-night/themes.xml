@@ -1,7 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MoodApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Customize your dark theme here. --><!-- Add the custom star color for RatingBar -->
+        <item name="colorControlActivated">#FFD700</item> <!-- Yellow color for filled stars -->
     </style>
+
 </resources>
